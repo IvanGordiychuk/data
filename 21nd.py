@@ -6,8 +6,9 @@ from nltk.tokenize import word_tokenize
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 import numpy as np
-
-response = requests.get('https://newsapi.org/v2/everything?q=russia&from=2019-08-25&to=2019-09-25&language=en&contry=US&apiKey=6f795d902bc3494ba973f71e6f476cb3')
+nltk.download('punkt')
+nltk.download('stopwords')
+response = requests.get('https://newsapi.org/v2/everything?q=russia&from=2019-08-25&to=2019-09-25&language=en&contry=US&apiKey=KEY')
 jsonText = json.loads(response.text)
 text=""
 for obj in jsonText['articles']:
